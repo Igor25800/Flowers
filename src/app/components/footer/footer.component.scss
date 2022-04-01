@@ -1,0 +1,151 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.container {
+  background-color: $textColorNav;
+  padding: $paddingPages;
+}
+
+.items {
+  @include row;
+}
+
+.item {
+  @include row;
+}
+
+.li-item {
+  font-size: $flowersDescription;
+  font-style: normal;
+  font-weight: 500;
+  color: $colorWhite;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  list-style-type: none;
+  margin-bottom: 1rem;
+  font-family: Montserrat;
+}
+
+.row {
+  @include row;
+  justify-content: space-evenly;
+}
+
+.title {
+  color: $colorTitleGray;
+  font-size: $sizeText;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  margin-right: 1.2rem;
+}
+
+.text-col {
+  margin-top: 2rem;
+}
+
+.hr-border {
+  width: 80%;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $hrGray;
+  @include marginTop(2rem);
+  padding: 0;
+}
+
+.center {
+  @include center;
+}
+
+.company {
+  font-family: Montserrat;
+  font-size: $flowersDescription;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: $colorTitleGray;
+}
+
+.column {
+  width: 100%;
+  @include center;
+  @include colum;
+}
+
+.email {
+  font-family: Montserrat;
+  font-size: $flowersDescription;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: $colorWhite;
+}
+
+.margin {
+  width: 80%;
+  @include center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.img {
+  width: 100%;
+  @include marginTop(2rem);
+}
+
+.item {
+  width: 50%;
+  @include marginTop(2rem);
+  @include row;
+}
+.items {
+  width: 80%;
+  @include colum;
+  @include center;
+}
+.parent {
+  width: 100%;
+  @include row;
+}
+
+.catalog , .text ,.store {
+  width: 59%;
+  margin-right: 10%;
+}
+
+.row {
+  width: 100%;
+}
+
+@media #{$mobile} {
+  .img {
+    @include marginTop(2rem);
+    display: flex;
+    justify-content: center;
+  }
+
+  .item {
+    @include marginTop(5rem);
+    @include colum;
+  }
+  .items {
+    @include colum;
+  }
+  .parent {
+    @include row;
+  }
+
+}
+

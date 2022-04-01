@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="center">
+    <hr class="center-border">
+  </div>
+  <div class="page">
+    <div class="page-container">
+      <app-navigate></app-navigate>
+      <h1 class="my-orders-title">My orders</h1>
+      <cdk-accordion class="example-accordion">
+        <cdk-accordion-item
+          *ngFor="let order of arrayOrder; let index = index;"
+          #accordionItem="cdkAccordionItem"
+          class="example-accordion-item"
+          role="button"
+          tabindex="0"
+          [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded"
+          [attr.aria-controls]="'accordion-body-' + index">
+          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+
+            <div class="my-orders-accordion-status" [class]="isStatus(order.orderStatus)"></div>
+            <div class="row">
+              <div class="my-orders-accordion-textOrder">
+                <p class="my-orders-accordion-textOrder-text">Order #{{order.id}}</p>
+                <p class="my-orders-accordion-textOrder-time">{{order.creationDate}}</p>
+              </div>
+              <p class="my-orders-accordion-city">{{order.deliveryAddress}}</p>
+            </div>
+            <p class="my-orders-accordion-price">{{calcAllTotalPrice(order.productItems) | money}}</p>
+            <span class="example-accordion-item-description">
+              <img [src]="accordionItem.expanded? '../../assets/img/top.png'  :  '../../assets/img/bottom.png'" alt="">
+      </span>
+          </div>
+          <div
+            class="example-accordion-item-body"
+            role="region"
+            *ngIf="accordionItem.expanded"
+            [attr.id]="'accordion-body-' + index"
+            [attr.aria-labelledby]="'accordion-header-' + index">
+            <div class="my-orders-panel" [@fadeInOut]>
+              <p class="my-orders-panel-title">Order Details</p>
+              <div class="cart-card" *ngFor="let item of order.productItems">
+                <div class="cart-card-left">
+                  <div class="cart-card-img">
+                    <img class="cart-card-img" [src]="url + item.photo" alt="">
+                  </div>
+                  <div class="cart-card-title">
+                    <p class="cart-card-title-top">{{item.name}}</p>
+                    <p class="cart-card-title-bottom">{{item.category.name}}</p>
+                  </div>
+                </div>
+                <div class="cart-card-right">
+                  <div class="cart-card-right-price">
+                    <p>{{item.priceDto.price | money}}</p>
+                  </div>
+                  <div class="cart-card-right-group">{{item.cont}}
+                  </div>
+                  <div class="cart-card-right-total">
+                    <p>{{calcTotalPrice(item.priceDto.price, item.count) | money}}</p>
+                  </div>
+                </div>
+              </div>
+              <hr class="contact-hr">
+              <div class="contact">
+                <p class="contact-title">Contact person</p>
+                <p class="contact-name">{{order.deliveryName}}</p>
+                <p class="contact-email">{{order.email}}</p>
+                <p class="contact-number">{{order.phone}}</p>
+                <p class="contact-title margin">Additional information</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nullam pulvinar aliquet est. Pretium sit
+                  volutpat sem amet rhoncus.</p>
+                <p class="contact-title margin">Congratulation message</p>
+                <p>At nullam pulvinar aliquet est. Pretium sit volutpat sem amet rhoncus.</p>
+              </div>
+              <hr class="contact-hr">
+              <div class="contact">
+                <p class="contact-title">Payment method</p>
+                <p class="contact-name">{{order.paymentType}}</p>
+              </div>
+            </div>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
+    </div>
+  </div>
+</div>

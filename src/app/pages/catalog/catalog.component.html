@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="center">
+    <hr class="center-border">
+  </div>
+  <div class="page">
+    <div class="page-container">
+      <app-navigate></app-navigate>
+      <div class="catalog">
+        <div class="catalog-category">
+          <div class="catalog-category-card" *ngFor="let category of arrCategoryFilter" (click)="selectedCatalog(category)">
+            <img class="catalog-category-card-img" [src]="url + category.photo" alt="">
+            <p class="catalog-category-card-title">{{category.name}}</p>
+            <p class="catalog-category-card-description">{{category.thumbnail}}</p>
+          </div>
+        </div>
+      </div>
+      <hr class="catalog-border">
+      <h1 class="catalog-title">Catalog</h1>
+      <p class="catalog-description">
+        For several years now, our company has been delighting customers with the delivery of flowers and
+        congratulations. We are really proud of the clear and well-coordinated work of our employees and are always
+        confident that your order will be delivered at the right time to the right place.
+      </p>
+      <div class="catalog-main">
+        <app-filter #filter
+                    (getPages)="getPages($event)"
+                    (arrayFlowers)="change($event)"
+                    [arrCategoryFilter]="arrCategoryFilter"
+                    [objFlower]="objFlower"
+                    (selected)="selected($event)"
+                    [changeArray]="arraySort"
+                    [pages]="page">
+        </app-filter>
+        <div class="catalog-main-right">
+          <div class="catalog-main-right-wrap">
+            <div class="catalog-main-right-wrap-block">
+              <p class="catalog-main-right-wrap-block-title">{{totalElements}} products found</p>
+                <select #selectedValue class="catalog-main-right-wrap-block-selected" (change)="selected(selectedValue);">
+                <option value="null">Sort by...</option>
+                <option value="price ASC">price ASC</option>
+                <option value="price DESC">price DESC</option>
+                <option value="name ASC">name ASC</option>
+                <option value="name DESC">name DESC</option>
+              </select>
+            </div>
+            <div class="catalog-main-right-wrap-btn">
+              <button type="button" class="catalog-main-right-wrap-btn-green" (click)="filter.filterEvent()">Filter</button>
+              <button type="button" class="catalog-main-right-wrap-btn-green" (click)="filter.sortingEvent()">Sorting</button>
+            </div>
+            <div  class="catalog-main-right-wrap-card" *ngFor="let flower of arrFlower">
+              <div class="catalog-main-right-wrap-card-flowersCard">
+                <div class="catalog-main-right-wrap-card-flowersCard-description">
+                  <div class="catalog-main-right-wrap-card-flowersCard-description-img">
+                    <img [src]=" url + flower.photo" alt=""  (click)="urlFlower(flower)">
+                  </div>
+                  <div class="flowers">
+                    <h5 class="flowers-title">{{flower.name}}</h5>
+                    <p class="flowers-description">{{flower.category.name}}</p>
+                    <br>
+                    <p class="flowers-price">{{flower.priceDto.price | money}}</p>
+                  </div>
+                  <div>
+                  </div>
+                </div>
+                <div>
+                  <button type="button" class="catalog-main-right-btn" (click)="cart(flower)">
+                    <div class="catalog-main-right-btn-row">
+                      <img class="left" src="assets/img/shopping-btn.png" alt="">
+                      <p class="catalog-main-right-btn-text">Add to cart</p>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="page-container-row">
+              <div class="page-container-row-page" *ngFor="let item of arrayPage">
+                <button [class.active]="activePage(item)" (click)="pageNext(item)"
+                        class="page-container-row-page-pagination">{{item + 1}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center">
+        <div class="page-container-promo">
+          <div class="page-container-promo-left">
+            <img class="page-container-promo-left-img" src="assets/img/main/promo/promoLeft.png"  alt="">
+          </div>
+          <div class="page-container-promo-right">
+            <img class="page-container-promo-right-img" src="assets/img/main/promo/promoRight.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="clearArray()">clear</button>

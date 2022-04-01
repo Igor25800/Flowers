@@ -1,0 +1,51 @@
+<app-template nameRouter="Sing in">
+  <form [formGroup]="registrationForms">
+    <div class="registration-form-group" [class.border-danger]="validatorForm('fullName')">
+      <input formControlName="fullName" class="registration-form-group-inp" type="text" placeholder=" ">
+      <label class="registration-form-group-label red">Full name<span class="star">*</span></label>
+    </div>
+    <div class="registration-form-group" [class.border-danger]="validatorForm('email')">
+      <input formControlName="email" class="registration-form-group-inp" type="text" placeholder=" ">
+      <label class="registration-form-group-label">Email<span class="star">*</span></label>
+    </div>
+    <div class="registration-form-group" [class.border-danger]="validatorForm('phone')">
+      <input formControlName="phone" class="registration-form-group-inp" type="text" mask="00(000)-000-00-00"
+             placeholder=" ">
+      <label class="registration-form-group-label">Phone number<span class="star">*</span></label>
+    </div>
+    <div class="registration-form-group">
+      <app-maps [address]="position" [height]="height" (changeValueMaps)="eventMaps($event)" [zoom]="10" [location]="location"></app-maps>
+    </div>
+    <div class="registration-form-group" [class.border-danger]="validatorForm('homeAddress')">
+      <input #addressInput formControlName="homeAddress" class="registration-form-group-inp" type="text" placeholder=" "  ngx-google-places-autocomplete [options]='options'  (onAddressChange)="handleAddressChange($event)" >
+      <label class="registration-form-group-label">Address<span class="star">*</span></label>
+    </div>
+    <div class="registration-form-group">
+      <textarea formControlName="information" class="registration-form-group-inp textArea" placeholder=" "></textarea>
+      <label class="registration-form-group-label">Additional information</label>
+    </div>
+    <div class="registration-form-group" [class.border-danger]="validatorForm('password')">
+      <input formControlName="password" class="registration-form-group-inp" type="text" placeholder=" ">
+      <label class="registration-form-group-label">Password<span class="star">*</span></label>
+    </div>
+    <div class="registration-form-group" [class.border-danger]="validatorForm('confirmPassword')">
+      <input formControlName="confirmPassword" class="registration-form-group-inp" type="text" placeholder=" ">
+      <label class="registration-form-group-label">Confirm password<span class="star">*</span></label>
+    </div>
+    <div class="registration-form-checkbox" [class.danger]="validatorForm('stan')">
+      <label class="registration-form-checkbox-label">
+        <input formControlName="stan" class="registration-form-checkbox-label-inp" type="checkbox">
+        <div class="registration-form-checkbox-label-checkbox">
+          <img class="registration-form-checkbox-label-checkmark" src="assets/img/registration/good.png" alt="">
+        </div>
+        <span class="text">I agree to the  <span class="text-red">processing of personal data</span> </span>
+      </label>
+    </div>
+    <div class="registration-form-group">
+      <button type="button" class="registration-form-group-btn" (click)="registration()">REGISTER</button>
+    </div>
+    <div class="registration-form-group">
+      <button type="button" class="registration-form-group-btn red" (click)="openDialog()">Reset Password</button>
+    </div>
+  </form>
+</app-template>

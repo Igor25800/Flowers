@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="center">
+    <hr class="center-border">
+  </div>
+  <div class="page">
+    <div class="page-container">
+      <app-navigate></app-navigate>
+      <div class="cart">
+        <h1 class="cart-title">Cart</h1>
+        <div *ngIf="cartArray.length">
+          <div class="cart-card" *ngFor="let cart of cartArray">
+            <div class="cart-card-left">
+                <div class="cart-card-checkbox">
+                  <label class="cart-card-checkbox-label">
+                    <input class="cart-card-checkbox-label-inp" type="checkbox" [checked]="cart.id === selectedItemId"
+                           (change)="selectItem(cart.id)">
+                    <div class="cart-card-checkbox-label-checkbox">
+                      <img class="cart-card-checkbox-label-checkmark" src="assets/img/registration/good.png" alt="">
+                    </div>
+                  </label>
+                </div>
+                <div class="cart-card-img">
+                  <img class="cart-card-img" [src]="url + cart.photo" alt="">
+                </div>
+                <div class="cart-card-title">
+                  <p class="cart-card-title-top">{{cart.name}}</p>
+                  <p class="cart-card-title-bottom">{{cart.category.name}}</p>
+                </div>
+              </div>
+            <div class="cart-card-right">
+                <div class="cart-card-right-price">
+                  <p>{{cart.priceDto.price | money}}</p>
+                </div>
+                <div class="cart-card-right-group">
+                  <input [(ngModel)]="cart.count" class="cart-card-group-inp" type="text" required (input)="calcPrice()">
+                </div>
+                <div class="cart-card-right-total">
+                  <p>{{ calcTotalPrice(cart.priceDto.price, cart.count)  | money}}</p>
+                </div>
+              </div>
+            <div class="cart-card-delete" (click)="deleteCart(cart.id)">&#10006;</div>
+          </div >
+          <div class="cart-footer">
+            <div class="cart-footer-left">
+              <button class="cart-footer-left-delete" (click)="deleteCart(selectedItemId)">DELETE SELECTED</button>
+            </div>
+            <div class="cart-footer-right">
+              <p class="cart-footer-right-text">Total price —  <span class="cart-footer-right-total">{{total | money}}</span></p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!cartArray.length">
+          <h1 class="cart-title">Купите товар</h1>
+        </div>
+        <hr class="hr">
+      </div>
+      <div class="order">
+        <h3 class="order-title">Order placement</h3>
+        <form class="registration-form" [formGroup]="orderForm">
+          <div class="registration-form-group" [class.border-danger]="validatorForm('deliveryName')">
+            <input formControlName="deliveryName" class="registration-form-group-inp" type="text" placeholder=" ">
+            <label class="registration-form-group-label red">Full name<span class="star">*</span></label>
+          </div>
+          <div class="registration-form-group" [class.border-danger]="validatorForm('email')">
+            <input formControlName="email" class="registration-form-group-inp" type="text"   placeholder=" ">
+            <label class="registration-form-group-label" >Email<span class="star">*</span></label>
+          </div>
+          <div class="registration-form-group" [class.border-danger]="validatorForm('phone')">
+            <input formControlName="phone" class="registration-form-group-inp" type="text" mask="00(000)-000-00-00"   placeholder=" ">
+            <label class="registration-form-group-label">Phone number<span class="star">*</span></label>
+          </div>
+          <div class="registration-form-group" >
+            <textarea  formControlName="message" class="registration-form-group-inp textArea"   placeholder=" "></textarea>
+            <label class="registration-form-group-label">Congratulatory message</label>
+          </div>
+          <div class="registration-form-group">
+            <app-maps [address]="position" [height]="height" (changeValueMaps)="eventMaps($event)" [zoom]="10" [location]="location"></app-maps>
+          </div>
+          <div class="registration-form-group" [class.border-danger]="validatorForm('deliveryAddress')">
+            <input #addressInput formControlName="deliveryAddress" class="registration-form-group-inp" type="text"  placeholder=" "  ngx-google-places-autocomplete [options]='options'  (onAddressChange)="handleAddressChange($event)">
+            <label class="registration-form-group-label">Address<span class="star">*</span></label>
+          </div>
+          <div class="registration-form-group">
+            <textarea  formControlName="information" class="registration-form-group-inp textArea"  placeholder=" " ></textarea>
+            <label class="registration-form-group-label">Additional information</label>
+          </div>
+          <p class="order-titleRadio">Choose a payment method:</p>
+          <div class="sort-radio" [class.danger]="validatorForm('radio')">
+            <input formControlName="radio" class="sort-radio-inp" type="radio" name="radio" value="CARD"  placeholder=" "> <span
+            class="sort-text">In cash to the courier</span>
+          </div>
+          <div class="sort-radio" [class.danger]="validatorForm('radio')">
+            <input formControlName="radio" class="sort-radio-inp" type="radio" name="radio" value="ONLINE"><span
+            class="sort-text">By bank card on the website</span>
+          </div>
+          <div class="order-btn">
+            <button class="order-btn-confirmed" (click)="addOrder()">CONFIRMED ORDER</button>
+            <button class="order-btn-continue" (click)="continueShopping()">CONTINUE SHOPPING</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

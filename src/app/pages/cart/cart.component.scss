@@ -1,0 +1,458 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.container {
+  @include marginTop(7.5rem)
+}
+
+.page {
+  width: 100%;
+  padding: 4%;
+  @include center;
+  @include colum;
+
+  &-container {
+    width: 87%;
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &-border {
+    width: 80%;
+    border: 1px solid $colorHr;
+  }
+}
+
+.cart {
+  width: 100%;
+
+  &-title {
+    @include marginTop(3rem);
+    font-family: Montserrat;
+    font-size: $descriptionTitle;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &-card {
+    @include marginTop(2rem);
+    width: 70%;
+    height: 106px;
+    border-radius: 10px;
+    border: 1px solid $btnPageBorder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-left {
+      width: 40%;
+      @include row;
+    }
+
+    &-right {
+      @include row;
+      align-items: center;
+
+      &-price {
+        width: 33% ;
+        font-family: Montserrat;
+        font-size: $flowersDescription;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      &-total {
+        width: 30%;
+        font-family: Montserrat;
+        font-size: $flowersDescription;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+
+      }
+    }
+
+    &-checkbox {
+      @include marginTop(1rem);
+      margin-bottom: 1.5rem;
+      margin-right: 1rem;
+
+      &-label {
+        display: flex;
+        align-items: center;
+
+        &-text {
+          font-family: Montserrat;
+          font-size: $textDescriptionNews;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 27px;
+          letter-spacing: 0em;
+          text-align: left;
+          width: 74%;
+        }
+
+        &-inp {
+          -webkit-appearance: none;
+          position: absolute;
+        }
+
+        &-checkbox {
+          position: relative;
+          width: 20px;
+          height: 20px;
+          border: 1px solid $grayLight;
+        }
+
+        &-checkmark {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80%;
+          height: auto;
+          display: none;
+        }
+      }
+
+      &-label &-label-checkbox {
+        margin-right: 10px;
+      }
+
+      &-label &-label-inp {
+        -webkit-appearance: none;
+        position: absolute;
+      }
+
+      &-label &-label-inp:checked ~ &-label-checkbox &-label-checkmark {
+        display: block;
+      }
+
+      &-label &-label-inp:checked ~ &-label-checkbox {
+        background: $btnColor;
+        border: 2px solid $btnColor;
+      }
+    }
+
+    &-img {
+      width: 69px;
+      height: 69px;
+    }
+
+    &-title {
+      @include colum;
+      margin-left: 1rem;
+
+      &-top {
+        font-family: Montserrat;
+        font-size: $flowersDescription;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 5px;
+      }
+
+      &-bottom {
+        font-family: Montserrat;
+        font-size: $flowersDescription;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $textColorDescription;
+
+      }
+    }
+
+    &-price {
+      width: 12% ;
+      font-family: Montserrat;
+      font-size: $flowersDescription;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    &-group {
+
+
+      &-inp {
+        font-size: 16px;
+        display: block;
+        width: 40%;
+        text-align: center;
+        height: 50px;
+        border: 1px solid $grayLight;
+        border-radius: 5px;
+      }
+
+      &-inp:focus {
+        outline: none;
+      }
+    }
+
+    &-delete {
+      font-size: 15px;
+      margin-left: 10%;
+      cursor: pointer;
+    }
+  }
+
+  &-footer {
+    @include marginTop(2rem);
+    @include row;
+    width: 70%;
+    justify-content: space-between;
+
+    &-left {
+      width: 50%;
+
+      &-delete {
+        width: 50%;
+        height: 57px;
+        outline: none;
+        background-color: white;
+        border: 1px solid $btnPageBorder;
+        border-radius: 10px;
+      }
+
+      &-delete:active {
+        border: 1px solid $colorActive;
+      }
+    }
+
+    &-right {
+
+      &-total {
+        font-family: Montserrat;
+        font-size: $flowersDescription;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.hr {
+  @include marginTop(5rem);
+  width: 100%;
+  border: 1px solid $colorHr;
+}
+
+.order {
+  @include marginTop(3rem);
+  width: 100%;
+
+  &-title {
+    font-family: Montserrat;
+    font-size: $textFlowers;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  &-titleRadio {
+    font-family: Montserrat;
+    font-size: $textDescriptionNews;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+
+  }
+
+  &-btn {
+    @include marginTop(3rem);
+    width: 70%;
+
+    &-confirmed {
+      width: 30%;
+      height: 57px;
+      background-color: $btnColor;
+      border-radius: 10px;
+      border: 1px solid $btnColor;
+      color: $colorWhite;
+    }
+
+    &-continue {
+      margin-left: 2rem;
+      width: 30%;
+      height: 57px;
+      border-radius: 10px;
+      background-color: $mobileWhite;
+      border: 1px solid $mobileWhite;
+    }
+  }
+}
+
+
+.sort {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-radio {
+    display: flex;
+    margin-top: 2rem;
+
+    &-inp {
+      width: 24px;
+      height: 24px;
+      @include center;
+      -webkit-appearance: none;
+      border-radius: 50%;
+      border: 1px solid  $btnColor;
+    }
+
+    &-inp:checked:after {
+      width: 12px;
+      height: 12px;
+      border-radius: 15px;
+      position: relative;
+      background-color: $btnColor;
+      content: '';
+      display: inline-block;
+      visibility: visible;
+    }
+  }
+
+  &-text {
+    margin-left: 1rem;
+  }
+}
+
+.registration-form {
+  @include form(70%);
+}
+
+.textArea {
+  height: 154px;
+}
+
+.star {
+  color: $colorActive;
+  margin-left: 3px;
+}
+
+
+
+.border-danger {
+  border: 1px solid $borderRed;
+  border-radius: 5px;
+
+  .registration-form-group-label {
+    color: $borderRed !important;
+  }
+}
+
+.danger {
+  color: $borderRed !important;
+}
+
+
+@media #{$mobile, $tablet} {
+    .page {
+
+      &-container {
+        width: 100%;
+      }
+    }
+
+    .cart {
+
+      &-card {
+        width: 100%;
+        height: auto;
+        @include colum;
+        padding: 4%;
+
+        &-left {
+          width: 100%;
+        }
+
+        &-right {
+          @include row;
+        }
+
+        &-delete {
+          position: relative;
+          top: -7rem;
+          left: 42%;
+        }
+      }
+
+      &-footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+
+        &-right {
+
+          &-text {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+
+        &-left {
+          @include marginTop(1rem);
+          width: 100%;
+
+          &-delete {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+  .cart-card-checkbox {
+    @include center;
+  }
+
+  .order {
+
+    &-btn {
+      width: 100%;
+      @include colum;
+
+      &-confirmed {
+        width: 100%;
+      }
+
+      &-continue {
+        width: 100%;
+        @include marginTop(1rem);
+        margin-left: 0;
+      }
+    }
+  }
+
+  .registration-form-group {
+    width: 100%;
+  }
+}
+

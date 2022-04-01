@@ -1,0 +1,33 @@
+@import "../assets/style/mixin";
+@import "../assets/style/variables";
+
+.page {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.center {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.chat {
+  position: fixed;
+  left: 95%;
+  top: 90%;
+}
+
+@media #{$tablet, $mobile} {
+  .chat {
+    display: none;
+  }
+}
+
+

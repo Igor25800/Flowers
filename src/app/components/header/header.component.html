@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="left-bar row">
+      <span class="burgerMenu" (click)="toggle()">&#9776;</span>
+      <div class="nav-left">
+        <img src="../../../assets/img/Vector.png" alt="">
+      </div>
+      <div class="nav-right">
+        <img src="../../../assets/img/FlowerShopBlack.png" alt="">
+      </div>
+    </div>
+    <div class="right-bar">
+      <nav class="row">
+        <ul class="row">
+          <div class="row display">
+            <li class="text-nav" [routerLink]="['home']"   [class.active]="isActivePage('home')">HOME</li>
+            <li class="text-nav" [routerLink]="['catalog']"  [class.active]="isActivePage('catalog')">CATALOG</li>
+            <li class="text-nav" [routerLink]="['about-us']" [class.active]="isActivePage('about-us')">ABOUT US</li>
+            <li class="text-nav" [routerLink]="['news']"   [class.active]="isActivePage('news')">NEWS</li>
+            <li class="text-nav" [routerLink]="['contacts']" [class.active]="isActivePage('contacts')">CONTACTS</li>
+          </div>
+          <div class="row">
+            <li class="text-nav"  [routerLink]="['search']" [class.active]="isActivePage('search')">
+              <img src="../../../assets/img/search.png" alt="">
+            </li>
+            <li class="text-nav" [routerLink]="['cart']" [class.active]="isActivePage('cart')">
+              <img src="../../../assets/img/shopping-bag.png" alt="" >
+              <span class="cart">
+                  <span *ngIf="cartArray.length > 0" class="cart-count">{{cartArray.length }}</span>
+              </span>
+            </li>
+            <li class="text-nav"  (click)="openDialog()"  [class.active]="isActivePage('modal')" >
+              <img src="../../../assets/img/user.png" alt="">
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <app-dialog *ngIf="isDialogToggle" (isExit)="eventExitDialog($event)"  ></app-dialog>
+    </div>
+  </div>
+</div>
+<div id="myNav" class="overlay" [ngStyle]="{width: progress +'%'}">
+  <div class="overlay-content">
+    <a class="text-mobile" [routerLink]="['home']" (click)="close()">HOME</a>
+    <a class="text-mobile" [routerLink]="['catalog']"  (click)="close()" >CATALOG</a>
+    <a class="text-mobile" [routerLink]="['about-us']" (click)="close()">ABOUT US</a>
+    <a class="text-mobile" [routerLink]="['news']" (click)="close()">NEWS</a>
+    <a class="text-mobile" [routerLink]="['contacts']" (click)="close()">CONTACTS</a>
+  </div>
+</div>

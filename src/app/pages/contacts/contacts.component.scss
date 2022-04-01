@@ -1,0 +1,171 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.container {
+  margin-top: 7.5rem;
+}
+
+.page {
+  width: 100%;
+  padding: 4%;
+  @include center;
+
+  &-container {
+    width: 87%;
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &-border {
+    width: 80%;
+    border: 1px solid $colorHr;
+  }
+}
+
+.contacts {
+  width: 100%;
+
+  &-img {
+    @include marginTop(3rem);
+    width: 100%;
+
+    &-maps {
+      width: 100%;
+    }
+  }
+
+  &-title {
+    @include marginTop(3rem);
+    margin-bottom: 2rem;
+    font-family: Montserrat;
+    font-size: $title;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 58px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: linear-gradient(to right, $pink 0%, $violet 25%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &-description {
+    width: 60%;
+    font-family: Montserrat;
+    font-size: $textDescriptionNews;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &-card {
+    @include row;
+    @include marginTop(2rem);
+
+    &-descriptionCity {
+      @include description(700);
+      display: flex;
+      align-items: center;
+    }
+
+    &-descriptionIphone {
+      @include description(400);
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-us {
+    display: flex;
+    justify-content: center;
+    @include marginTop(3rem);
+
+    &-btn {
+      color: white;
+      width: 131px;
+      height: 51px;
+      background: $btnColor;
+      border-radius: 10px;
+      border: none;
+    }
+
+    &-btn:active {
+      border: 1px solid $btnActive;
+    }
+
+    &-center {
+      width: 90%;
+      background: $colorWhite;
+      padding: 5%;
+    }
+
+    &-title {
+      font-family: Montserrat;
+      font-size: $descriptionTitle;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+   @include form(70%);
+  }
+}
+
+.textArea {
+  height: 173px;
+}
+
+@media #{$tablet} {
+  .contacts-description {
+    width: 100%;
+  }
+
+  .contacts-us {
+
+    &-center {
+      width: 100%;
+    }
+
+    &-group {
+      width: 90%;
+    }
+  }
+}
+
+@media #{$mobile} {
+  .contacts-description {
+    width: 100%;
+  }
+
+  .contacts-us {
+
+    &-center {
+      width: 100%;
+    }
+
+    &-group {
+      width: 90%;
+    }
+  }
+}
+
+.border-danger {
+  border: 1px solid $borderRed;
+  border-radius: 5px;
+  color: $borderRed !important;
+
+  .contacts-us-group-label {
+    color: $borderRed !important;
+  }
+}
+
+

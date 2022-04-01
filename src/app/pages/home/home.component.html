@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="slider">
+    <div class="slider-text">
+      <div class="text-slider">
+        <h1 class="slider-title">Bouquets for your holidays!</h1>
+        <p class="slider-description">Just like in the picture!</p>
+      </div>
+      <div class="flex-end">
+        <div class="slider-flower"></div>
+      </div>
+    </div>
+    <img class="slider-img" src="assets/img/main/slider/slider.png" alt="">
+  </div>
+  <div class="promo">
+    <div class="promoImg-left">
+      <img class="nav-img" src="assets/img/main/promo/promoLeft.png" s alt="">
+    </div>
+    <div class="promoImg-right">
+      <img class="nav-img" src="assets/img/main/promo/promoRight.png" alt="">
+    </div>
+  </div>
+  <div class="category">
+    <div class="category-card" *ngFor="let items of arrCategory">
+      <img src="../../../assets/img/main/category/{{items.img}}.png" alt="">
+      <p class="category-title">{{items.title}}</p>
+      <p class="category-description">{{items.description}}</p>
+    </div>
+  </div>
+  <div class="flowers">
+    <h3 class="flowers-title-text">Look at the these beauties!</h3>
+    <div class="wrap">
+      <div class="wrap-card" *ngFor="let flower of arrFlowers" >
+        <div class="flowers-card">
+        <div class="flowers-card-description">
+          <div class="flowers-img">
+            <img src="assets/img/main/flowers/{{flower.img}}.png" alt="">
+          </div>
+          <div class="flowers-column-text">
+            <h5 class="flowers-title">{{flower.title}}</h5>
+            <p class="flowers-description">{{flower.description}}</p>
+            <br>
+            <p class="flowers-price">{{flower.price}}</p>
+          </div>
+          <div>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="flowers-btn-green" >
+            <div class="row">
+              <img class="left" src="assets/img/shopping-btn.png" alt="">
+              <p class="btn-text">Add to cart</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div>
+    <button class="btn-green">Browse catalog</button>
+  </div>
+  <div class="description">
+    <h2 class="description-title">Flower delivery in Minsk</h2>
+    <div class="description-text">
+      Flowers can and should be given not only for holidays, but also for no reason. And flowers with delivery are
+      convenient, fast and reliable. In our online store, you can order stunning bouquets for your home or office, which
+      can not fail to impress. We will deliver them to any convenient point in Minsk. If desired, the bouquet is
+      supplemented with a postcard, the text of which is chosen by the client.
+      Flower delivery Minsk is a service that is very popular in the Republic of Belarus. You can order a ready-made
+      composition or a thematic bouquet for a birthday, name day, wedding, anniversary, congratulations and other
+      occasions. Roses (peony, bush), tulips, daisies, lilies, orchids, chrysanthemums, gerberas, alstroemeria, irises,
+      peonies, eustomas, carnations are only a part of those flowers that are used for making bouquets. Forget about
+      visiting a florist. We will make a bouquet for you that meets your wishes and requirements, and we will deliver it
+      for free in Minsk and the Minsk district: Central, Sovetsky, Pervomaysky, Partizansky, Zavodsky, Leninsky,
+      Oktyabrsky, Moskovsky, Frunzensky.
+    </div>
+  </div>
+</div>
+
+

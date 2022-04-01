@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="center">
+    <div class="price-changes">
+      <div class="price-changes-card">
+        <div class="price-changes-card-header">
+          <h3 class="price-changes-card-header-title">Price changes</h3>
+          <div class="price-changes-card-header-moon">
+            <p class="price-changes-card-header-moon-left"  [class.active]="isActiveMoon" >1 MONTHS</p>
+            <p class="price-changes-card-header-moon-right" [class.active]="!isActiveMoon">6 MONTHS</p>
+          </div>
+          <div class="price-changes-card-header-close">&#10006;</div>
+        </div>
+        <hr class="price-changes-card-hr">
+        <div class="price-changes-card-line">
+          <canvas class="canvas" id="chart" width="700" height="350" #mychart></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

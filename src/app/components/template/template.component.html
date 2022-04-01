@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="center">
+    <hr class="center-border">
+  </div>
+  <div class="page">
+    <div class="page-container">
+      <app-navigate></app-navigate>
+      <div class="registration">
+        <div class="registration-row">
+          <h2 class="registration-row-title">Registration</h2>
+          <p class="registration-row-sing" (click)="login()">{{nameRouter}}</p>
+        </div>
+      </div>
+      <div class="registration-form">
+       <ng-content></ng-content>
+      </div>
+      <div class="footer">
+        <div>
+          <h2 class="footer-line">OR</h2>
+        </div>
+        <p class="footer-text">Use accounts of other services for quick login</p>
+        <div class="footer-btn">
+          <button class="footer-btn-facebook">
+            <img class="footer-btn-facebook-img" src="assets/img/registration/btn/facebook.png" alt="">
+            <p>SIGN IN WITH FACEBOOK</p>
+          </button>
+          <button class="footer-btn-google">
+            <img class="footer-btn-google" src="assets/img/registration/btn/icons_google.png" alt="">
+            <p>SIGN IN WITH GOOGLE</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

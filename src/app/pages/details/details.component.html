@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="center">
+    <hr class="center-border">
+  </div>
+</div>
+<div class="page">
+  <div class="page-container">
+    <app-navigate></app-navigate>
+    <div class="details">
+      <div class="details-header">
+        <div class="details-header-left">
+          <img class="details-header-left-img" [src]="url" alt="">
+          <div class="details-img">
+            <div class="details-img-left">
+              <img class="details-img-left-img" [src]="url" alt="">
+            </div>
+            <div class="details-img-right">
+              <img class="details-img-right-img" [src]="url" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="details-header-right">
+          <h2 class="details-header-right-title">{{obj?.name}}</h2>
+          <p class="details-header-right-description">{{obj?.description}}</p>
+          <div class="details-header-right-price">
+            <div>
+              <p class="details-header-right-price">€ {{obj?.priceDto?.price}}EUP</p>
+            </div>
+            <div class="details-header-right-price-change" routerLink="price-change">
+              <img src="../../../assets/img/details/bar-chart-2.png" alt="">
+              <div class="details-header-right-price-change-text">
+                <p>Price changes</p>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="details-header-right-green">
+            <div class="details-header-right-green-row">
+              <img class="details-header-right-green-row-left" src="assets/img/shopping-btn.png" alt="">
+              <p class="details-header-right-green-row-text">ADD TO CARD</p>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="details-descriptions">
+        <h3 class="details-descriptions-title">Descriptions</h3>
+        <p class="details-descriptions-text">For several years now, our company has been delighting customers with the
+          delivery of flowers and congratulations. We are really proud of the clear and well-coordinated work of our
+          employees and are always confident that your order will be delivered at the right time to the right place.</p>
+      </div>
+      <div class="details-blockImg">
+        <div class="details-blockImg-img">
+          <img class="details-blockImg-img-pictures"  [src]="url" alt="">
+        </div>
+        <div class="details-blockImg-img">
+          <img  class="details-blockImg-img-pictures"  [src]="url" alt="">
+        </div>
+        <div class="details-blockImg-img">
+          <img  class="details-blockImg-img-pictures"  [src]="url" alt="">
+        </div>
+      </div>
+      <div class="details-text">
+        <p class="details-text-silver">Examples of our work</p>
+      </div>
+      <div class="details-footerText">
+        <p class="details-footerText-descriptions">We always know where your order is located, at any time it can be tracked thanks to the means of mobile communication and navigation that each of our couriers has, regardless of whether he moves on foot or using one of the types of his own transport.
+          We are pleased with the constant influx of new customers, and we value each of them. And our reputation is growing every day thanks to constant feedback from grateful customers who have used our services.</p>
+      </div>
+      <div class="details-promo">
+        <div class="details-promo-left">
+          <img class="details-promo-left-img" src="assets/img/main/promo/promoLeft.png" s alt="">
+        </div>
+        <div class="details-promo-right">
+          <img class="details-promo-right-img" src="assets/img/main/promo/promoRight.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

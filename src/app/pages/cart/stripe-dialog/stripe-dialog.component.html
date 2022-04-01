@@ -1,0 +1,30 @@
+<form class="form">
+  <p class="title">Email</p>
+  <label class="group-label">
+    <label>
+      <input [formControl]="email" id="email" class="field" placeholder="jane.doe@example.com" />
+    </label>
+  </label>
+   <p class="title">Card Information</p>
+  <div class="group">
+    <label class="group-label">
+      <div id="card-number-element" class="field"></div>
+      <span class="brand"><i class="pf pf-credit-card" id="brand-icon"></i></span>
+    </label>
+    <div class="row-block">
+      <label class="group-label  row">
+        <div id="card-expiry-element" class="field"></div>
+      </label>
+      <label class="group-label row">
+        <div id="card-cvc-element" class="field"></div>
+      </label>
+    </div>
+  </div>
+  <button id="checkout" type="submit" (click)="buy()">Pay ${{data.totalPrice}}</button>
+  <div class="outcome">
+    <div class="error"></div>
+    <div class="success">
+      Success! Your Stripe token is <span class="token"></span>
+    </div>
+  </div>
+</form>

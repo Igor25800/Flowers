@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="center">
+    <hr class="hr-border">
+  </div>
+  <div class="page">
+    <div class="container-page">
+      <app-navigate></app-navigate>
+      <div class="news">
+        <h1 class="news-title">News</h1>
+        <p class="news-description">For several years now, our company has been delighting customers with the delivery
+          of flowers and congratulations. We are really proud of the clear and well-coordinated work of our employees
+          and are always confident that your order will be delivered at the right time to the right place.</p>
+      </div>
+      <div class="promo">
+        <div class="promo-left">
+          <img class="promo-left-img" src="assets/img/main/promo/promoLeft.png" s alt="">
+        </div>
+        <div class="promo-right">
+          <img class="promo-right-img" src="assets/img/main/promo/promoRight.png" alt="">
+        </div>
+      </div>
+      <div class="card" *ngFor="let news of arrayNews">
+        <p class="card-time">{{news.data}}</p>
+        <h3 class="card-title">{{news.title}}</h3>
+        <p class="card-description">{{news.description}}
+        <p>
+      </div>
+      <div class="paginator">
+        <button class="paginator-page">1</button>
+        <button class="paginator-page">2</button>
+        <button class="paginator-page">3</button>
+        <span class="paginator-point">...</span>
+        <button class="paginator-page">15</button>
+      </div>
+    </div>
+  </div>
+</div>

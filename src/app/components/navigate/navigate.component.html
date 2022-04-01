@@ -1,0 +1,16 @@
+<nav>
+  <ul class="navigate">
+    <div class="navigate-row">
+      <li class="navigate-home" routerLink="home">Home</li>
+      <li class="navigate-item">
+        <img src="assets/img/news/navigate/navigate.png" alt="">
+      </li>
+    </div>
+    <div class="navigate-row" *ngFor="let item of arrRouter">
+      <li class="navigate-home"  (click)="routNavigate(item)">{{item | titlecase}}</li>
+      <li class="navigate-item">
+        <img src="assets/img/news/navigate/navigate.png" alt="">
+      </li>
+    </div>
+  </ul>
+</nav>

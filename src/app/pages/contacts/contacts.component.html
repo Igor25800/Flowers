@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="center">
+    <hr class="center-border">
+  </div>
+  <div class="page">
+    <div class="page-container">
+      <app-navigate></app-navigate>
+      <div class="contacts">
+        <div class="contacts-img">
+          <app-maps [address]="position" [height]="height" [zoom]="15"></app-maps>
+        </div>
+        <h1 class="contacts-title">Contacts</h1>
+      </div>
+      <div class="contacts-description">
+        <p class="description">For several years now, our company has been delighting customers with the delivery of
+          flowers and congratulations. We are really proud of the clear and well-coordinated work of our employees and
+          are always confident that your order will be delivered at the right time to the right place.</p>
+      </div>
+      <div class="contacts-card">
+        <div class="contacts-card-img">
+          <img class="contacts-card-img" src="./assets/img/contacts/point.png" alt="">
+        </div>
+        <div class="contacts-card-descriptionCity">
+          <p>Kalvariyskaya str., 19, room 45</p>
+        </div>
+      </div>
+      <div class="contacts-card">
+        <div class="contacts-card-img">
+          <img class="contacts-card-img" src="./assets/img/contacts/iphone.png" alt="">
+        </div>
+        <div class="contacts-card-descriptionIphone">
+          <p>+375 29 123-45-67</p>
+        </div>
+      </div>
+      <div class="contacts-card">
+        <div class="contacts-card-img">
+          <img class="contacts-card-img" src="./assets/img/contacts/mail.png" alt="">
+        </div>
+        <div class="contacts-card-descriptionIphone">
+          <p>info@flowershop.by</p>
+        </div>
+      </div>
+      <div class="contacts-us">
+        <div class="contacts-us-center">
+          <h2 class="contacts-us-title">Contact us</h2>
+          <form [formGroup]="contactForms">
+            <div class="contacts-us-group" [class.border-danger]="validatorForm('name')">
+              <input formControlName="name" class="contacts-us-group-inp" type="text" placeholder=" ">
+              <label class="contacts-us-group-label">Your name</label>
+            </div>
+            <div class="contacts-us-group" [class.border-danger]="validatorForm('phone')">
+              <input formControlName="phone" class="contacts-us-group-inp" type="text" mask="00(000)-000-00-00"
+                     placeholder=" ">
+              <label class="contacts-us-group-label">Phone number</label>
+            </div>
+            <div class="contacts-us-group" [class.border-danger]="validatorForm('text')">
+              <textarea formControlName="text" class="contacts-us-group-inp textArea" placeholder=" "></textarea>
+              <label class="contacts-us-group-label">Text message</label>
+            </div>
+            <div class="contacts-us-btn">
+              <button type="button" class="contacts-us-btn" (click)="addContacts()">Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="dialog">
+  <nav class="dialog-nav">
+    <ul class="dialog-nav-collum">
+      <li class="dialog-nav-collum-text" [routerLink]="['my-orders']" routerLinkActive="active" (click)="exit()">MY ORDERS</li>
+      <li class="dialog-nav-collum-text" [routerLink]="url" (click)="exit()"  routerLinkActive="active">MANAGE MY ACCOUNT</li>
+    </ul>
+  </nav>
+  <div class="dialog-hr"></div>
+  <div class="dialog-exit">
+    <p class="dialog-exit-text" (click)="exit()">LOG OUT</p>
+  </div>
+</div>

@@ -1,0 +1,191 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.container {
+  width: 100%;
+  padding: $paddingPages;
+}
+
+.burgerMenu {
+  display: none;
+  font-size: $burgerMenu;
+  margin-right: 1rem;
+}
+
+.hr-border {
+  margin-top: 1rem;
+}
+
+.row {
+  @include row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-bars {
+  display: inline-block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.text-nav {
+  list-style-type: none !important;
+  margin-left: 5rem;
+  cursor: pointer;
+  font-size: $sizeText;
+  style: normal;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-family: Montserrat;
+  display: flex;
+  justify-content: center;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 64px;
+  left: 0;
+  background-image: url(../../../assets/img/background.png);
+  background-size: 100%, 100%;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.overlay .text-mobile {
+  padding: 8px;
+  text-decoration: none;
+  font-size: $descriptionTitle;
+  color: $overlayColor;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay .text-mobile:hover, .overlay .text-mobile:focus {
+  color: $mobileWhite;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: $fontSizeBtn;
+}
+
+.text-mobile {
+  font-family: Montserrat;
+  margin-bottom: 3rem;
+  font-size: $sizeText !important;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0.05em;
+  color: $textColorNav;
+
+}
+
+.container {
+  position: fixed;
+  background-color: $colorWhite;
+  z-index: 10000;
+}
+
+.active {
+  color: $colorActive;
+  -webkit-appearance: none;
+}
+
+.active::before {
+  position:absolute;
+  bottom: 1rem;
+  content: url(../../../assets/img/border.png);
+  color: $colorActive;
+}
+
+.column {
+  @include colum
+}
+
+
+.cart {
+  width: 28px;
+  height: 21px;
+  position: absolute;
+
+  &-count {
+    padding: 1px;
+    border-radius: 8px;
+    background-color: $colorActive;
+    position: relative;
+    left: 14px;
+    bottom: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+  }
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .overlay .text-mobile {
+    font-size: $textOverlay;
+  }
+
+  .overlay .closebtn {
+    font-size: $textBtn;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media screen and (max-width: 1378px) {
+  .text-nav {
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 1092px) {
+  .text-nav {
+    margin-left: 2rem !important;
+  }
+}
+
+@media screen and (max-width: 961px) {
+  .text-nav {
+    margin-left: 1rem !important;
+  }
+}
+
+@media screen and (max-width: 852px) {
+  .display {
+    display: none;
+  }
+
+  .burgerMenu {
+    display: block;
+  }
+
+  .active::before {
+    top: 3rem;
+  }
+}

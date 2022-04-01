@@ -1,0 +1,188 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+
+.container {
+  @include marginTop(7.5rem)
+}
+
+.page {
+  width: 100%;
+  padding: 4%;
+  @include center;
+
+  &-container {
+    width: 87%;
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .hr-border {
+    width: 80%;
+    border: 1px solid $colorHr;
+  }
+}
+
+.about {
+  @include marginTop(3rem);
+
+  &-title {
+    margin-bottom: 2rem;
+    font-family: Montserrat;
+    font-size: $title;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 58px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: linear-gradient(to right, $pink 0%, $violet 25%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &-img {
+    @include marginTop(3rem);
+    width: 100%;
+
+    &-flowers {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  &-description {
+    @include marginTop(3rem);
+    width: 60%;
+    font-family: Montserrat;
+    font-size: $textDescriptionNews;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $textColorNav;
+  }
+}
+
+.flowers {
+  width: 100%;
+  @include marginTop(5rem);
+  @include center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.work {
+  @include marginTop(5rem);
+  color: $textColorDescription;
+  font-family: Montserrat;
+  font-size: $flowersDescription;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.text {
+  @include marginTop(2rem);
+
+  &-description {
+    width: 60%;
+    font-family: Montserrat;
+    font-size: $textDescription;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+.title {
+  @include marginTop(3rem);
+  font-family: Montserrat;
+  font-size: $textFlowers;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: $colorActive;
+}
+
+.card-parent {
+  @include marginTop(3rem);
+  margin-bottom: 3rem;
+}
+
+.card {
+  @include row;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &-img {
+    margin-right: 3rem;
+  }
+
+  &-description {
+    width: 60%;
+    font-family: Montserrat;
+    font-size: $textDescription;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+@media #{$tablet} {
+  .about {
+
+    &-description {
+      width: 100%;
+    }
+  }
+
+  .text-description {
+    width: 100%;
+  }
+
+  .card-description {
+    width: 100%;
+  }
+}
+
+@media #{$mobile} {
+  .page-container {
+    width: 100%;
+  }
+
+  .about {
+
+    &-description {
+      width: 100%;
+    }
+  }
+
+  .flowers {
+
+    &-card {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .text-description {
+    width: 100%;
+  }
+
+  .card-description {
+    width: 100%;
+  }
+}

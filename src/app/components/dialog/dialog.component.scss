@@ -1,0 +1,76 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.dialog {
+  position: absolute;
+  left: 84%;
+  top: 100%;
+  width: 273px;
+  height: 181px;
+  background-color: $colorWhite;
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    &-collum {
+
+      &-text {
+        font-family: Montserrat;
+        font-size: $sizeText;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0.05em;
+        text-align: left;
+        list-style: none;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+
+    }
+  }
+
+  &-hr {
+    width: 100%;
+    border: 1px solid $colorHr;
+  }
+
+  &-exit {
+    margin-top: 1rem;
+    margin-left: 2.5rem;
+    width: 100%;
+    list-style: none;
+    font-family: Montserrat;
+    font-size: $sizeText;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    text-align: left;
+
+    &-text {
+      cursor: pointer;
+    }
+  }
+}
+
+.active {
+  color: $colorActive;
+  -webkit-appearance: none;
+}
+
+
+@media #{$mobile, $tablet}  {
+  .dialog {
+    position: absolute;
+    left: 39%;
+    top: 129%;
+  }
+}

@@ -1,0 +1,483 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.container {
+  margin-top: 7.5rem;
+}
+
+.page {
+  width: 100%;
+  padding: 4%;
+  @include center;
+
+  &-container {
+    width: 87%;
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &-border {
+    width: 80%;
+    border: 1px solid $colorHr;
+  }
+}
+
+.my-orders {
+
+  &-title {
+    @include marginTop(3rem);
+    font-family: Montserrat;
+    font-size: $titleAccount;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  &-accordion {
+    @include center;
+    width: 80%;
+    border: 1px solid $btnPageBorder;
+    @include marginTop(3rem);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    height: 106px;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-status {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      margin-top: 0.9rem;
+    }
+
+    &-textOrder {
+      width: 23%;
+
+      &-text {
+        font-family: Montserrat;
+        font-size: $flowersDescription;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      &-time {
+        font-family: Montserrat;
+        font-size: $flowersDescription;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $textColorDescription;
+      }
+    }
+
+    &-city {
+      font-family: Montserrat;
+      font-size: $flowersDescription;
+      font-style: normal;
+      width: 40%;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    &-price {
+      font-family: Montserrat;
+      font-size: $flowersDescription;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: right;
+
+    }
+
+  }
+
+  &-panel {
+    width: 100%;
+    padding: 2%;
+    transition: 0.6s;
+    background-color: white;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    &-title {
+      font-family: Montserrat;
+      font-size: $flowersDescription;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+}
+
+
+.cart-card {
+  @include marginTop(2rem);
+  height: 106px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-left {
+    width: 48%;
+    @include row;
+  }
+
+  &-right {
+    @include row;
+    align-items: center;
+    width: 36%;
+
+    &-price {
+      width: 33% ;
+      font-family: Montserrat;
+      font-size: $flowersDescription;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    &-total {
+      width: 30%;
+      font-family: Montserrat;
+      font-size: $flowersDescription;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+
+    }
+
+    &-group {
+      width: 20%;
+    }
+  }
+
+  &-checkbox {
+    @include marginTop(1rem);
+    margin-bottom: 1.5rem;
+    margin-right: 1rem;
+
+    &-label {
+      display: flex;
+      align-items: center;
+
+      &-text {
+        font-family: Montserrat;
+        font-size: $textDescriptionNews;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: left;
+        width: 74%;
+      }
+
+      &-inp {
+        -webkit-appearance: none;
+        position: absolute;
+      }
+
+      &-checkbox {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $grayLight;
+      }
+
+      &-checkmark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: auto;
+        display: none;
+      }
+    }
+
+    &-label &-label-checkbox {
+      margin-right: 10px;
+    }
+
+    &-label &-label-inp {
+      -webkit-appearance: none;
+      position: absolute;
+    }
+
+    &-label &-label-inp:checked ~ &-label-checkbox &-label-checkmark {
+      display: block;
+    }
+
+    &-label &-label-inp:checked ~ &-label-checkbox {
+      background: $btnColor;
+      border: 2px solid $btnColor;
+    }
+  }
+
+  &-img {
+    width: 69px;
+    height: 69px;
+  }
+
+  &-title {
+    @include colum;
+    margin-left: 1rem;
+
+    &-top {
+      font-family: Montserrat;
+      font-size: $flowersDescription;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+
+    &-bottom {
+      font-family: Montserrat;
+      font-size: $flowersDescription;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: $textColorDescription;
+
+    }
+  }
+
+  &-price {
+    width: 12% ;
+    font-family: Montserrat;
+    font-size: $flowersDescription;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &-group {
+
+    &-inp {
+      font-size: 16px;
+      display: block;
+      width: 40%;
+      text-align: center;
+      height: 50px;
+      border: 1px solid $grayLight;
+      border-radius: 5px;
+    }
+
+    &-inp:focus {
+      outline: none;
+    }
+  }
+
+  &-delete {
+    font-size: 15px;
+    margin-left: 10%;
+    cursor: pointer;
+  }
+}
+
+.example-accordion {
+  display: block;
+  max-width: 80%;
+
+}
+
+.example-accordion-item {
+  display: block;
+  border: solid 1px $colorHr;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.example-accordion-item-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.example-accordion-item-description {
+  font-size: 0.85em;
+  color: #999;
+}
+
+.example-accordion-item-header,
+.example-accordion-item-body {
+  padding: 16px;
+}
+
+.example-accordion-item-header:hover {
+  cursor: pointer;
+}
+
+.contact {
+  padding: 4%;
+
+  &-hr {
+    width: 100%;
+    border: 1px solid  $colorHr;
+    margin-top: 3rem;
+  }
+
+  &-title {
+    font-family: Montserrat;
+    font-size: $flowersDescription;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  &-name {
+    font-family: Montserrat;
+    font-size: $textDescriptionNews;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  &-email {
+    font-family: Montserrat;
+    font-size: $textDescription;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    color: $colorTitleGray;
+  }
+
+  &-number {
+    font-family: Montserrat;
+    font-size: $textDescription;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    color: $colorTitleGray;
+  }
+}
+
+.margin {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.green {
+  background-color: $btnColor;
+}
+
+.warning {
+  background-color: $warning;
+}
+
+.row {
+  width: 75%;
+}
+
+@media #{$mobile, $tablet} {
+  .page-container {
+    width: 99%;
+  }
+
+  .example-accordion {
+    max-width: 100% !important;
+
+    &-item {
+      padding: 10px;
+
+      &-header {
+        padding: 0;
+      }
+
+      &-body {
+        padding: 9px;
+      }
+    }
+  }
+
+  .my-orders {
+
+    &-accordion{
+
+      &-textOrder {
+        width: 100%;
+      }
+
+      &-city {
+        width: 100%;
+      }
+    }
+  }
+
+  .row {
+    @include colum;
+    max-width: 41%;
+  }
+
+  .cart {
+
+    &-card{
+
+      &-left {
+        width: 65%;
+      }
+
+      &-right {
+        flex-direction: column;
+
+        &-price {
+          width: 70%;
+        }
+
+        &-total {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,298 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.container {
+  margin-top: 7.5rem;
+}
+
+.page {
+  width: 100%;
+  padding: 4%;
+  @include center;
+
+  &-container {
+    width: 50%;
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &-border {
+    width: 80%;
+    border: 1px solid $colorHr;
+  }
+}
+
+.registration {
+  @include marginTop(3rem);
+
+  &-row {
+    width: 100%;
+    @include row;
+    justify-content: space-between;
+
+    &-title {
+      font-family: Montserrat;
+      font-size: $descriptionTitle;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    &-sing {
+      font-family: Montserrat;
+      font-size: $textDescriptionNews;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: right;
+      color: $colorActive;
+      cursor: pointer;
+    }
+
+    &-line {
+      @include marginTop(3rem)
+    }
+  }
+
+  &-form {
+    @include marginTop(3rem);
+    @include form(100%);
+
+    &-group {
+
+      &-btn {
+        width: 100%;
+        height: 50px;
+        background-color: $btnColor;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        font-family: Montserrat;
+        font-size: $sizeText;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0.05em;
+        text-align: center;
+      }
+
+      &-btn:active {
+        border: 1px solid green;
+      }
+    }
+
+    &-checkbox {
+      margin-bottom: 2rem;
+
+      &-label {
+        display: flex;
+        align-items: center;
+
+        &-inp {
+          -webkit-appearance: none;
+          position: absolute;
+        }
+
+        &-checkbox {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          border: 1px solid $borderColor;
+        }
+
+        &-checkmark {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80%;
+          height: auto;
+          display: none;
+        }
+      }
+
+      &-label &-label-checkbox {
+        margin-right: 10px;
+      }
+
+      &-label &-label-inp {
+        -webkit-appearance: none;
+        position: absolute;
+      }
+
+      &-label &-label-inp:checked ~ &-label-checkbox &-label-checkmark {
+        display: block;
+      }
+
+      &-label &-label-inp:checked ~ &-label-checkbox {
+        background: $btnColor;
+        border: 2px solid $btnColor;
+      }
+    }
+  }
+}
+
+.star {
+  color: $colorActive;
+  margin-left: 3px;
+}
+
+.textArea {
+  height: 154px;
+}
+
+.text {
+  font-family: Montserrat;
+  font-size: $textDescriptionNews;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  &-red {
+    color: $borderRed;
+    text-decoration: underline;
+  }
+}
+
+.footer {
+  @include marginTop(5rem);
+
+  &-btn {
+    @include marginTop(8rem);
+    @include colum;
+
+    &-facebook {
+      margin-bottom: 3rem;
+      background-color: $btnFacebook;
+      border-radius: 10px;
+      border: none;
+      @include row;
+      @include center;
+      height: 57px;
+      color: white;
+
+      &-img {
+        margin-right: 1rem;
+      }
+    }
+
+    &-google {
+      border: none;
+      @include row;
+      @include center;
+      font-family: Montserrat;
+      font-size: $btnFacebook;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 17px;
+      letter-spacing: 0.05em;
+      text-align: left;
+      height: 57px;
+      color: black;
+      border-radius: 10px;
+      background-color: $btnGoogle;
+
+      &-img {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &-text {
+    @include marginTop(6rem);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+
+  }
+
+  &-line {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    font-size: $sizeText;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+  }
+
+  &-line:before,
+  &-line:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: $whiteLine;
+    z-index: -1;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  &-line:before {
+    right: 15px;
+    margin: 0 0 0 -100%;
+  }
+
+  &-line:after {
+    left: 15px;
+    margin: 0 -100% 0 0;
+  }
+}
+
+@media #{$tablet} {
+  .page-container {
+    width: 100%;
+  }
+}
+
+@media #{$mobile} {
+  .page-container {
+    width: 100%;
+  }
+
+  .registration {
+
+    .registration-row {
+      justify-content: flex-end !important;
+      @include colum;
+
+      &-sing {
+        @include marginTop(1rem);
+        text-align: left;
+      }
+    }
+  }
+}
+
+.border-danger {
+  border: 1px solid red;
+  border-radius: 5px;
+  color: $borderRed !important;
+
+  .registration-form-group-label {
+    color: $borderRed !important;
+  }
+}
+
+.danger {
+  .registration-form-checkbox-label {
+    color: $borderRed !important;
+  }
+}
+
+

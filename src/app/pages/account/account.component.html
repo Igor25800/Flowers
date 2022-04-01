@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="center">
+    <hr class="center-border">
+  </div>
+  <div class="page">
+    <div class="page-container">
+      <app-navigate></app-navigate>
+      <div class="account">
+        <div class="account-row">
+          <h2 class="account-row-title">My account</h2>
+        </div>
+      </div>
+      <div class="account-form">
+        <form [formGroup]="accountForm">
+          <div class="account-form-group" [class.border-danger]="validatorForm('fullName')">
+            <input formControlName="fullName" class="account-form-group-inp" type="text" placeholder=" ">
+            <label class="account-form-group-label">Full name<span class="star">*</span></label>
+          </div>
+          <div class="account-form-group" [class.border-danger]="validatorForm('email')">
+            <input formControlName="email" class="account-form-group-inp" type="text" placeholder=" ">
+            <label class="account-form-group-label">Email<span class="star">*</span></label>
+          </div>
+          <div class="account-form-group" [class.border-danger]="validatorForm('phone')">
+            <input formControlName="phone" class="account-form-group-inp" type="text" mask="00(000)-000-00-00"
+                   placeholder=" ">
+            <label class="account-form-group-label">Phone number<span class="star">*</span></label>
+          </div>
+          <div class="account-form-group">
+            <app-maps [address]="position" [height]="height" (changeValueMaps)="eventMaps($event)" [zoom]="10"
+                      [location]="location"></app-maps>
+          </div>
+          <div class="account-form-group" [class.border-danger]="validatorForm('homeAddress')">
+            <input #addressInput formControlName="homeAddress" class="account-form-group-inp" type="text" placeholder=" "
+                   ngx-google-places-autocomplete [options]='options'
+                   (onAddressChange)="handleAddressChange($event)">
+            <label class="account-form-group-label">Address<span class="star">*</span></label>
+          </div>
+          <div class="account-form-group">
+            <textarea class="account-form-group-inp textArea" placeholder=" "></textarea>
+            <label class="account-form-group-label">Additional information</label>
+          </div>
+          <div class="account-form-group">
+            <button type="button" class="account-form-group-btn" (click)="saveUserInfo()">Save changes</button>
+          </div>
+          <div class="account-form-password">
+            <h2 class="account-form-password-title">Password</h2>
+            <button type="button" class="account-form-password-btn" (click)="openDialog()">Change password</button>
+          </div>
+          <div class="account-form-account">
+            <h2 class="account-form-account-title">Account</h2>
+            <button type="button" class="account-form-account-btn" (click)="exit()">Sign out</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

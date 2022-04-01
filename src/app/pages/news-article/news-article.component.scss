@@ -1,0 +1,197 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.container {
+  @include marginTop(7rem)
+}
+
+.page {
+  width: 100%;
+  padding: 4%;
+  @include center;
+
+  &-container {
+    width: 87%;
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .hr-border {
+    width: 80%;
+    border: 1px solid $colorHr;
+  }
+}
+
+.news {
+  width: 60%;
+  margin-top: 3rem;
+
+  &-title {
+    margin-bottom: 2rem;
+    font-family: Montserrat;
+    font-size: $title;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 58px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: linear-gradient(45deg, $pink, $violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &-description {
+    font-family: Montserrat;
+    font-size: $textDescriptionNews;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $textColorNav;
+  }
+}
+
+.img {
+  @include marginTop(3rem);
+  width: 100%;
+
+  &-title {
+    width: 100%;
+  }
+}
+
+.description {
+  @include marginTop(3rem);
+  width: 60%;
+  font-family: Montserrat;
+  font-size: $textDescription;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: $textColorNav;
+}
+
+.card {
+  @include marginTop(3rem);
+
+  &-description {
+    @include marginTop(3rem);
+    width: 60%;
+    font-family: Montserrat;
+    font-size: $textDescription;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $textColorNav;
+  }
+
+  &-img {
+    width: 100%;
+
+    .card-img-flowers {
+      width: 100%;
+    }
+  }
+}
+
+.promo {
+  @include marginTop(5rem);
+  @include row;
+  width: 100%;
+
+  &-left {
+    width: 100%;
+    margin-right: 5%;
+
+    &-img {
+      width: 100%;
+    }
+  }
+
+  &-right {
+    width: 100%;
+
+    &-img {
+      width: 100%;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .news {
+    width: 100%;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .card {
+
+    &-description {
+      width: 100%;
+    }
+  }
+
+  .promo {
+    @include colum;
+
+    &-left {
+      margin-right: 0;
+
+      &-img {
+        width: 100%;
+      }
+    }
+
+    &-right {
+      &-img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media #{$mobile} {
+  .news {
+    width: 100%;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .card {
+
+    &-description {
+      width: 100%;
+    }
+  }
+
+  .promo {
+    @include colum;
+
+    &-left {
+      margin-right: 0;
+
+      &-img {
+        width: 100%;
+      }
+    }
+
+    &-right {
+      &-img {
+        width: 100%;
+      }
+    }
+  }
+}

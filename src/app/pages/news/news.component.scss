@@ -1,0 +1,263 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.container {
+  @include marginTop(7.5rem)
+}
+
+.page {
+  width: 100%;
+  padding: 4%;
+  @include center;
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hr-border {
+  width: 80%;
+  border: 1px solid $colorHr;
+}
+
+.container-page {
+  width: 87%;
+}
+
+.navigate {
+  @include row;
+
+  &-home {
+    list-style-type: none;
+    font-family: Montserrat;
+    font-size: $flowersDescription;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-right: 0.5rem;
+  }
+
+  &-item {
+    font-family: Montserrat;
+    font-size: $flowersDescription;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-right: 0.5rem;
+    list-style-type: none;
+    color: $colorGray;
+  }
+}
+
+.news {
+  width: 50%;
+  margin-top: 3rem;
+
+  &-title {
+    margin-bottom: 2rem;
+    font-family: Montserrat;
+    font-size: $title;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 58px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: linear-gradient(to right, $pink 0%, $violet 25%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &-description {
+    font-family: Montserrat;
+    font-size: $textDescriptionNews;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+.promo {
+  margin-top: 5rem;
+  @include row;
+  width: 100%;
+
+  &-left {
+    width: 100%;
+    margin-right: 5%;
+
+    &-img {
+      width: 100%;
+    }
+  }
+
+  &-right {
+    width: 100%;
+
+    &-img {
+      width: 100%;
+    }
+  }
+}
+
+.title-time {
+  margin-top: 3rem;
+  font-family: Montserrat;
+  font-size: $textDescriptionNews;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.card {
+  margin-top: 5rem;
+
+  &-time {
+    margin-bottom: 1rem;
+    font-family: Montserrat;
+    font-size: $textDescriptionNews;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &-title {
+    font-family: Montserrat;
+    font-size: $textFlowers;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  &-description {
+    width: 60%;
+    font-family: Montserrat;
+    font-size: $textDescriptionNews;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+.paginator {
+  width: 100%;
+  margin-top: 10rem;
+  @include center;
+
+  &-page {
+    width: 57px;
+    height: 57px;
+    margin-left: 1%;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid $btnPageBorder;
+    background: $colorWhite;
+  }
+
+  &-page:hover {
+    border: 1px solid $pink;
+  }
+
+  &-point {
+    margin-left: 0.5rem;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+}
+
+
+@media #{$tablet} {
+  .container-page {
+    width: 80%;
+  }
+
+  .news {
+    width: 80%;
+  }
+
+  .promo {
+    @include colum;
+
+    &-left {
+      margin-right: 0;
+
+      &-img {
+        width: 100%;
+      }
+    }
+
+    &-right {
+      &-img {
+        width: 100%;
+      }
+    }
+  }
+
+  .card {
+
+    &-description {
+      width: 80%;
+    }
+  }
+}
+
+@media #{$mobile} {
+
+  .container-page {
+    width: 100%;
+  }
+
+  .news {
+    width: 100%;
+  }
+
+  .promo {
+    @include colum;
+
+    &-left {
+      margin-right: 0;
+
+      &-img {
+        width: 100%;
+      }
+    }
+
+    &-right {
+      &-img {
+        width: 100%;
+      }
+    }
+  }
+
+  .card {
+
+    &-description {
+      width: 100%;
+    }
+  }
+
+
+}
+
+

@@ -1,0 +1,227 @@
+@import "src/assets/style/mixin";
+@import "src/assets/style/variables";
+
+.container {
+  margin-top: 7.5rem;
+}
+
+.page {
+  width: 100%;
+  padding: 4%;
+  @include center;
+
+  &-container {
+    width: 50%;
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &-border {
+    width: 80%;
+    border: 1px solid $colorHr;
+  }
+}
+
+.account {
+  @include marginTop(3rem);
+
+  &-row {
+    width: 100%;
+    @include row;
+    justify-content: space-between;
+
+    &-title {
+      font-family: Montserrat;
+      font-size: $descriptionTitle;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    &-sing {
+      font-family: Montserrat;
+      font-size: $textDescriptionNews;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: right;
+      color: $colorActive;
+      cursor: pointer;
+    }
+
+    &-line {
+      @include marginTop(3rem)
+    }
+  }
+
+  &-form {
+    @include marginTop(3rem);
+    @include form(100%);
+
+    &-password {
+      @include marginTop(6rem);
+
+      &-title {
+        font-family: Montserrat;
+        font-size: $titleAccount;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 2rem;
+      }
+
+      &-btn {
+        width: 30%;
+        height: 57px;
+        background-color: white;
+        border: 1px solid $btnColor;
+        border-radius: 10px;
+        color: $btnColor;
+      }
+
+      &-btn:active {
+        border: 2px solid green;
+      }
+    }
+
+    &-account {
+      @include marginTop(6rem);
+      margin-bottom: 6rem;
+
+      &-title {
+        font-family: Montserrat;
+        font-size: $titleAccount;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 2rem;
+      }
+
+      &-btn {
+        width: 30%;
+        height: 57px;
+        background-color: white;
+        border: 1px solid $btnColorAccount;
+        border-radius: 10px;
+        color: $btnColorAccount;
+      }
+
+      &-btn:active {
+        border: 2px solid $btnColorAccount;
+      }
+    }
+
+    &-group {
+
+      &-btn {
+        width: 30%;
+        height: 50px;
+        background-color: $btnColor;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        font-family: Montserrat;
+        font-size: $sizeText;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0.05em;
+        text-align: center;
+      }
+
+      &-btn:active {
+        border: 1px solid green;
+      }
+    }
+  }
+}
+
+.star {
+  color: $colorActive;
+  margin-left: 3px;
+}
+
+.textArea {
+  height: 154px;
+}
+
+.text {
+  font-family: Montserrat;
+  font-size: $textDescriptionNews;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  &-red {
+    color: $borderRed;
+    text-decoration: underline;
+  }
+}
+
+
+@media #{$tablet} {
+  .page-container {
+    width: 100%;
+  }
+}
+
+@media #{$mobile} {
+  .page-container {
+    width: 100%;
+  }
+
+  .account {
+
+    .account-row {
+      justify-content: flex-end !important;
+      @include colum;
+
+      &-sing {
+        @include marginTop(1rem);
+        text-align: left;
+      }
+    }
+  }
+}
+
+.margin {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.border-danger {
+  border: 1px solid red;
+  border-radius: 5px;
+  color: $borderRed !important;
+
+  .account-form-group-label {
+    color: $borderRed !important;
+  }
+}
+
+.danger {
+  .account-form-checkbox-label {
+    color: $borderRed;
+  }
+}
+
+.width {
+  width: 100%;
+}
+
+
+
+

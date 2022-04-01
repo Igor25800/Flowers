@@ -1,0 +1,64 @@
+$paddingPages: 2%;
+$marginTop: 2rem;
+
+//text
+$fontSizeBtn: 60px;
+$descriptionTitle: 36px;
+$title: 48px;
+$textFlowers: 28px;
+$textDescription: 16px;
+$sizeText: 15px;
+$SliderTextDescription: 24px;
+$flowersDescription: 14px;
+$cardDescription: 12px;
+$burgerMenu: 30px;
+$textDescriptionNews: 18px;
+$textBtn: 40px;
+$textOverlay: 20px;
+$titleAccount: 36px;
+
+//color
+$textColorDescription: #B4B4B4;
+$textColorGreen: #3c703c;
+$overlayColor: #818181;
+$colorWhite: white;
+$borderColor: #E7E7E7;
+$textColorNav: #404040;
+$colorGray: #BDBDBD;
+$colorHr: #eaeaea;
+$colorActive: #FF5D7D;
+$btnPageBorder: #E7E7E7;
+$btnColor: #5E9E5E;
+$btnFacebook: #4867AA;
+$btnGoogle: #ffffff;
+$borderRed: red;
+$btnColorAccount: #EB5757;
+$colorPage: #dedede;
+$colorTitleGray: #B4B4B4;
+$hrGray: #858585;
+$mobileWhite: #f1f1f1;
+$whiteLine: #d3d3d3;
+$pink : #FF5D7D;
+$violet: #7B61FF;
+$grayLight: #cccccc;
+$btnActive: #12c012;
+$colorWhiteSliver: #F5F5F5;
+$inputSilver: #ccc;
+$warning: #F2A559;
+$error: #E4584C;
+$successBlue: #666EE8;
+$blackFocus: #090909;
+$blackActive: #000000;
+$blue:  #1f1f3d;
+$whiteSilver: #CFD7E0;
+
+//adaption
+$home-mobile: "screen and (max-width: 640px)";
+$home-tablet:  "screen and (max-width: 1066px)";
+$home-desktop: "screen and (max-width: 15000px)";
+
+
+
+$mobile: "screen and (max-width: 768px)";
+$tablet: "only screen and (min-width: 768px) and (max-width: 1024px)";
+$desktop: "only screen and (min-width: 1025px)";

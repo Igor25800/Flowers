@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="center">
+    <hr class="hr-border">
+  </div>
+</div>
+<div class="page">
+  <div class="page-container">
+    <app-navigate></app-navigate>
+    <div class="about">
+      <h1 class="about-title">About us</h1>
+      <div class="about-img">
+        <img class="about-img-flowers" src="assets/img/about-us/flowers.png" alt="">
+      </div>
+      <p class="about-description">For several years now, our company has been delighting customers with the delivery of flowers and congratulations. We are really proud of the clear and well-coordinated work of our employees and are always confident that your order will be delivered at the right time to the right place.</p>
+    </div>
+    <div class="flowers">
+      <div class="flowers-card" *ngFor="let flower of arrayFlower">
+        <img class="flowers-card-img" src="../../../assets/img/about-us/{{flower}}.png" alt="">
+      </div>
+    </div>
+    <p class="work">Examples of our work</p>
+    <div class="text">
+      <p class="text-description">We always know where your order is located, at any time it can be tracked thanks to the means of mobile communication and navigation that each of our couriers has, regardless of whether he moves on foot or using one of the types of his own transport.
+        We are pleased with the constant influx of new customers, and we value each of them. And our reputation is growing every day thanks to constant feedback from grateful customers who have used our services.</p>
+    </div>
+    <div class="about-img">
+      <img class="about-img-flowers" src="assets/img/about-us/flower-rose.png" alt="">
+    </div>
+    <h3 class="title">Our advantages</h3>
+    <div class="card-parent">
+      <div class="card" *ngFor="let card of arrayCard">
+        <div class="card-img">
+          <img src="assets/img/about-us/{{card.img}}.png" alt="">
+        </div>
+        <div class="card-description">{{card.description}}</div>
+      </div>
+    </div>
+  </div>
+</div>

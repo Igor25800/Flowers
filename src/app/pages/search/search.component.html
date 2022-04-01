@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="center">
+    <hr class="center-border">
+  </div>
+  <div class="page">
+    <div class="page-container">
+      <div class="search">
+        <div class="search-title">
+          <h3 class="search-title-text">Site search</h3>
+          <span class="search-title-close" (click)="closeSearch()">&#10006;</span>
+        </div>
+        <div class="search-form-group">
+          <input [(ngModel)]="search" class="search-form-group-inp" type="search" (keyup.enter)="onEnter()"
+                 placeholder=" ">
+          <label class="search-form-group-label">Enter your search request</label>
+        </div>
+        <div class="search-result" *ngIf="!arrSearch.length">
+          <h3 class="search-result-title">Search results</h3>
+          <p class="search-result-text">The search results will appear here</p>
+        </div>
+        <div class="catalog-main" *ngIf="arrSearch.length">
+          <app-filter #filter
+                      (getPages)="getPages($event)"
+                      (arrayFlowers)="change($event)"
+                      [arrCategoryFilter]="arrCategoryFilter"
+                      [objFlower]="objFlower"
+                      (selected)="selectedSort($event)"
+                      [name]="search"
+                      [pages]="page"
+          >
+          </app-filter>
+          <div class="catalog-main-right">
+            <div class="catalog-main-right-wrap">
+              <div class="catalog-main-right-wrap-block">
+                <p class="catalog-main-right-wrap-block-title">{{totalElements}} products found</p>
+                <select #selectedValue class="catalog-main-right-wrap-block-selected" (click)="selectedSort(selectedValue)">
+                  <option value="">Sort by...</option>
+                  <option value="price ASC">price ASC</option>
+                  <option value="price DESC">price DESC</option>
+                  <option value="name ASC">name ASC</option>
+                  <option value="name DESC">name DESC</option>
+                </select>
+              </div>
+              <div class="catalog-main-right-wrap-btn">
+                <button type="button" class="catalog-main-right-wrap-btn-green" (click)="filter.filterEvent()">Filter</button>
+                <button type="button" class="catalog-main-right-wrap-btn-green" (click)="filter.sortingEvent()">Sorting</button>
+              </div>
+              <div  class="catalog-main-right-wrap-card" *ngFor="let flower of arrFlower" (click)="urlFlower(flower)">
+                <div class="catalog-main-right-wrap-card-flowersCard">
+                  <div class="catalog-main-right-wrap-card-flowersCard-description">
+                    <div class="catalog-main-right-wrap-card-flowersCard-description-img">
+                      <img [src]=" url + flower.photo" alt="">
+                    </div>
+                    <div class="flowers">
+                      <h5 class="flowers-title">{{flower.name}}</h5>
+                      <p class="flowers-description">{{flower.category.name}}</p>
+                      <br>
+                      <p class="flowers-price">{{flower.priceDto.price | money}}</p>
+                    </div>
+                    <div>
+                    </div>
+                  </div>
+                  <div>
+                    <button type="button" class="catalog-main-right-btn">
+                      <div class="catalog-main-right-btn-row">
+                        <img class="left" src="assets/img/shopping-btn.png" alt="">
+                        <p class="catalog-main-right-btn-text">Add to cart</p>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="page-container-row" *ngIf="arrFlower.length">
+                <div  class="page-container-row-page" *ngFor="let item of arrayPage">
+                  <button [class.active]="isActivePage(item)" (click)="pageNext(item)"
+                          class="page-container-row-page-pagination">{{item + 1}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

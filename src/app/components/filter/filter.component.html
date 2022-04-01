@@ -1,0 +1,62 @@
+<div class="catalog-main-left overlay" [class.activeProgres]="progress">
+  <form [formGroup]="formGroupRadio">
+  <div class="space">
+    <h3 class="catalog-main-left-filter">Filter</h3> <span class="space-close" (click)="close()">&#10006;</span>
+  </div>
+  <p class="catalog-main-left-cost">Cost</p>
+  <div  class="filter"  *ngIf="selectedSort">
+    <div class="catalog-main-left-rage">
+      <div class="catalog-main-left-rage-parent">
+        <div class="catalog-main-left-rage-parent-group">
+          <input  formControlName="min"   class="catalog-main-left-rage-parent-group-inp" type="text" required>
+          <label class="catalog-main-left-rage-parent-group-label">From</label>
+        </div>
+        <div class="catalog-main-left-rage-parent-group">
+          <input  formControlName="max"  class="catalog-main-left-rage-parent-group-inp" type="text">
+          <label class="catalog-main-left-rage-parent-group-label">To</label>
+        </div>
+      </div>
+      <p-slider formControlName="rangeValues" [min]="price.minx" [max]="price.max" [range]="true"></p-slider>
+    </div>
+    <p class="catalog-main-left-title">Category</p>
+    <div class="catalog-main-left-checkbox" *ngFor="let category of arrCategoryFilter; let i = index">
+      <label class="catalog-main-left-checkbox-label">
+        <input class="catalog-main-left-checkbox-label-inp" type="checkbox" [checked]="category.name === checked"
+               (change)="selectedCheckbox(category)">
+        <div class="catalog-main-left-checkbox-label-checkbox">
+          <img class="catalog-main-left-checkbox-label-checkmark" src="assets/img/registration/good.png" alt="">
+        </div>
+        <span class="catalog-main-left-checkbox-label-text">{{category.name}}</span>
+      </label>
+    </div>
+    <div class="catalog-main-left-group">
+      <button type="button" class="catalog-main-left-group-btn" (click)="filter()"> &#10003; Apply filter</button>
+    </div>
+    <div class="catalog-main-left-group">
+      <button type="button" class="catalog-main-left-group-clear" (click)="clearFilter()">CLEAR Filter</button>
+    </div>
+  </div>
+  <div class="sorting" *ngIf="!selectedSort">
+    <div class="sort">
+
+      <div class="sort-radio">
+        <input formControlName="radio" class="sort-radio-inp" type="radio" name="radio" value="price ASC"> <span class="sort-text">price ASC</span>
+      </div>
+      <div class="sort-radio">
+        <input formControlName="radio" class="sort-radio-inp" type="radio" name="radio" value="price DESC"><span class="sort-text">price DESC</span>
+      </div>
+      <div class="sort-radio">
+        <input formControlName="radio" class="sort-radio-inp" type="radio" name="radio" value="name ASC"><span class="sort-text">name ASC</span>
+      </div>
+      <div class="sort-radio">
+        <input formControlName="radio" class="sort-radio-inp" type="radio" name="radio" value="name DESC"><span class="sort-text" >name DESC</span>
+      </div>
+      <div class="btn">
+        <button type="button" class="catalog-main-left-group-btn" (click)="filter()"> &#10003; Apply Sorting</button>
+      </div>
+
+    </div>
+  </div>
+  </form>
+</div>
+

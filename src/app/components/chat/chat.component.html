@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="chat" (click)="toggleDialog()">
+    <img src="../../../assets/img/chat/chat.png" alt="">
+  </div>
+  <div *ngIf="isDialog" class="dialog">
+    <div class="dialog-header">
+      <p class="dialog-header-title">CHAT WITH THE CONSULTANT</p>
+      <div class="dialog-header-close" (click)="toggleDialog()">&#10006;</div>
+    </div>
+    <div class="dialog-main" #scrollMe >
+      <div class="dialog-main-chat"  *ngFor="let msc of arrayChat">
+        <p *ngIf="msc.sender.id === idUser"  class="dialog-main-chat-send">{{msc.message}}</p>
+       <p *ngIf="msc.sender.id !== idUser" class="dialog-main-chat-receive">{{msc.message}}</p>
+      </div>
+    </div>
+    <div class="dialog-footer">
+      <div class="dialog-footer-group" >
+        <input [formControl]="chat" class="dialog-footer-group-inp" type="text" placeholder=" ">
+        <label class="dialog-footer-group-label">Write a message...</label>
+        <img class="dialog-footer-group-send" src="assets/img/chat/send.png"  alt="" (click)="send()">
+      </div>
+    </div>
+  </div>
+</div>
